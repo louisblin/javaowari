@@ -16,7 +16,8 @@ public class Game {
       b = new Bowl(4);
       System.out.println(b);
     }
-  
+ 
+
     System.out.println(board.length + "    " + board[0]);
     // for(int i = 0; i < 12; i++) { // 12 bowls 
     //   board[i] = new Bowl(4);
