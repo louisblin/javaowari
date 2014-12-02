@@ -1,5 +1,5 @@
 public class Bowl {
-  
+
   // Field
   private int numberOfStones;
   private int pendingDeposit;
@@ -13,10 +13,10 @@ public class Bowl {
   public int getStones() {
     return numberOfStones;
   }
-  
+
   public int takeAllStones() {
     int currentAmount = numberOfStones;
-    
+
     numberOfStones = 0;
     pendingDeposit = 0;
 
@@ -26,17 +26,17 @@ public class Bowl {
   public void depositStone() {
     pendingDeposit++;
   }
-  
+
   public int updateAndGetScore() {
     int resultScore = 0;
-    
-    if (numberOfStones == 1) {
-      resultScore = pendingDeposit + 1;       
+
+    if (numberOfStones == 1 && pendingDeposit > 0) {
+      resultScore = pendingDeposit + numberOfStones;
+      //System.out.println("1 stone found : adding score " + resultScore);
       numberOfStones = 0;
       pendingDeposit = 0;
 
     } else {
-      resultScore = 0;
       numberOfStones += pendingDeposit;
       pendingDeposit = 0;
     }

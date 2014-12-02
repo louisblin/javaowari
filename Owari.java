@@ -1,39 +1,46 @@
 public class Owari {
 
   public static void main(String[] args) {
-    
-    System.out.println("Welcome in Owari! :-)");
+
+    System.out.println("\n\n =================================");
+    System.out.println(    " ===== Welcome in Owari! :-) =====");
+    System.out.println(    " =================================\n\n");
 
     Game game = new Game();
 
     do {
-    
+
       game.display();
 
-    if (game.canCurrentPlayerMove()) {
-      
-      int pickedBowl = -1;
+      if (game.canCurrentPlayerMove()) {
 
-      do {
-        System.out.println("Player " + game.getCurrentPlayer() + ", your turn."
-                          + "Which bowl would you like to pick stones from?");
-        pickedBowl = IOUtil.readInt();
-      
-      } while (pickedBowl < 1 || pickedBowl > 12);
-      
-        pickedBowl--; // Translate choice to an array index
-        game.move(pickedBowl); 
+        int pickedBowl = -1;
 
-    } else {
-      continue;
-    }
-      game.swapPlayers();
-    
+        do {
+          System.out.print("  Player " + (game.getCurrentPlayer() + 1)
+                    + ", your turn."
+                    + "\n  Which bowl would you like to pick stones from?\t");
+          pickedBowl = IOUtil.readInt();
+          pickedBowl--; // Translate choice to an array index
+
+          //
+          System.out.println(
+                ((!game.isValidMove(pickedBowl) ? " -> NOT VALID!\n" : "")));
+          //
+        } while (!game.isValidMove(pickedBowl));
+
+          game.move(pickedBowl);
+
+      } else {
+        System.out.println(" @ Sorry bu you can't make any move... next turn!");
+      }
+        game.swapPlayers();
+
     } while (!game.isOver());
 
-      game.swapPlayers();
-
-      System.out.println("Player " + game.getCurrentPlayer() + " you won !");
+      System.out.println("\n  >> Player " + game.getLeadingPlayer()
+                    + " you won with a score of " 
+                    + game.getLeadingScore() + "!\n\n\n");
 
   }
 
