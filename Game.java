@@ -123,4 +123,22 @@ public class Game {
                         + lines[3] + "\n\n"
                         + "  Player 1: " + players[0].getScore() + "\n\n");
   }
+
+  // AI Extension
+  
+  /* post: 12 first values for the stones in eahc bowl.
+   *        2 last values for ther score of the 2 players.
+   */
+  public int[] currentState() {
+  
+    int[] result = new int[14];
+    
+    for(int i = 0; i < 12; i++) {
+      result[i] = board[i].getStones();
+    }
+    result[12] = players[0].getScore();
+    result[13] = players[1].getScore();
+
+    return result;
+  }
 }

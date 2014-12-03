@@ -14,6 +14,11 @@ public class Bowl {
     return numberOfStones;
   }
 
+  public void setStones(int stones) {
+    this.numberOfStones = stones;
+    this.pendingDeposit=  0;
+  }
+
   public int takeAllStones() {
     int currentAmount = numberOfStones;
 
