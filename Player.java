@@ -8,6 +8,10 @@ public class Player {
     this.score = 0;
   }
 
+  public Player(Player another) {
+    this.score = another.score;
+  }
+
   // Methods
   public void addToScore(int points) {
     score += points;

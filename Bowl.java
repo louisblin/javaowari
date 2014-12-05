@@ -8,15 +8,14 @@ public class Bowl {
   public Bowl(int stones) {
     this.numberOfStones = stones;
   }
+  
+  public Bowl(Bowl another) {
+    this.numberOfStones = another.getStones();
+  }
 
   // Methods
   public int getStones() {
     return numberOfStones;
-  }
-
-  public void setStones(int stones) {
-    this.numberOfStones = stones;
-    this.pendingDeposit=  0;
   }
 
   public int takeAllStones() {
@@ -47,6 +46,13 @@ public class Bowl {
     }
 
     return resultScore;
+  }
+
+  // AI
+  //
+  public void setStones(int stones) {
+    this.numberOfStones = stones;
+    this.pendingDeposit=  0;
   }
 
 }

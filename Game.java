@@ -24,6 +24,19 @@ public class Game {
     this.idCurrentPlayer = 0;
   }
 
+  public Game(Game another) {
+    this.players    = new Player[2];
+    this.players[0] = new Player(another.players[0]);
+    this.players[1] = new Player(another.players[1]);
+
+    this.board = new Bowl[12];
+    for(int i = 0; i < 12; i++) { // 12 bowls
+      this.board[i] = new Bowl(another.board[i]);
+    }
+
+    this.idCurrentPlayer = another.idCurrentPlayer;
+  }
+
   // Methods
   public int getCurrentPlayer() {
     return idCurrentPlayer;
