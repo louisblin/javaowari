@@ -21,8 +21,7 @@ public class AIOwari {
         if (game.getCurrentPlayer() == 1) {
           pickedBowl = aiPlayer.continueGame(new Game(game));          
          
-          assert (new Game(game)) != game :" MERDE !" ;
-          assert game.isValidMove (pickedBowl) : "AI chosed impossible move!";
+          assert (game.isValidMove(pickedBowl)) : "AI chosed impossible move!";
          
           System.out.println(" --> AI chosed bowl " + (pickedBowl + 1) + "\n\n");
 
