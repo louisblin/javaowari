@@ -3,7 +3,7 @@ public class Owari {
   public static void main(String[] args) {
 
     System.out.println("\n\n =================================");
-    System.out.println(    " ===== Welcome in Owari! :-) =====");
+    System.out.println(    " ===== Welcome to Owari! :-) =====");
     System.out.println(    " =================================\n\n");
 
     Game game = new Game();

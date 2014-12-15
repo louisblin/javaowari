@@ -5,7 +5,7 @@ public class Bowl {
   private int pendingDeposit;
 
   // Cons
-  public Bowl(int stones) {
+  public Bowl(int stones) { //  because the parameter 'shadows' the field
     this.numberOfStones = stones;
   }
   
@@ -22,7 +22,7 @@ public class Bowl {
     int currentAmount = numberOfStones;
 
     numberOfStones = 0;
-    pendingDeposit = 0;
+    // pendingDeposit = 0; --> COR: is always 0, useless line...
 
     return currentAmount;
   }
@@ -46,6 +46,10 @@ public class Bowl {
     }
 
     return resultScore;
+  }
+
+  public String toString() {
+    return Integer.toString(numberOfStones);
   }
 
   // AI
