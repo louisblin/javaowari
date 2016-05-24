@@ -9,7 +9,7 @@ public class Owari {
     Game game = new Game();
 
     do {
-     
+
       game.display();
 
       if (game.canCurrentPlayerMove()) {
@@ -28,7 +28,7 @@ public class Owari {
                 ((!game.isValidMove(pickedBowl) ? " -> NOT VALID!\n" : "")));
           //
         } while (!game.isValidMove(pickedBowl));
-          
+
           game.move(pickedBowl);
 
       } else {
@@ -45,6 +45,14 @@ public class Owari {
                     + " you won with a score of "
                     + game.getLeadingScore() + "!\n\n\n"
                     + "Cordialment, barrez-vous! \n\n\n");
+  }
+
+  // Thank you internet !
+  public final static void clearConsole(Game game) {
+    if (game.getCurrentPlayer() == 1) {
+      System.out.print("\033[H\033[2J");
+      System.out.flush();
+    }
   }
 
 }
